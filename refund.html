@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Return & Refund Policy | InkVibe</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'jet-navy': '#0f172a',
+            'jet-blue': '#1e40af',
+            'jet-accent': '#f97316',
+            'jet-accent-dark': '#ea580c',
+            'jet-gray': '#64748b',
+            'jet-light': '#f8fafc',
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            display: ['Poppins', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    .accordion-header {
+      transition: all 0.3s ease;
+    }
+    .accordion-header.active {
+      background-color: rgba(249, 115, 22, 0.07);
+      border-left: 4px solid #F97316;
+    }
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+    }
+    .accordion-content.open {
+      max-height: 2000px; /* increased for longer content */
+      padding-top: 1.5rem;
+      padding-bottom: 1.5rem;
+    }
+  </style>
+</head>
+<body class="bg-ink-light text-ink-navy font-sans">
+
+  <!-- ============================================= -->
+  <!--                NAVBAR                         -->
+  <!-- ============================================= -->
+    <header
+      class="sticky top-0 z-50 bg-white/85 backdrop-blur-xl border-b border-gray-200/60 shadow-sm transition-all duration-300"
+    >
+      <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16 md:h-[4.5rem]">
+          <!-- Logo -->
+          <a href="index.html" class="flex items-center gap-3 group">
+            <div class="relative w-9 h-9 flex-shrink-0">
+              <div
+                class="absolute inset-0 rounded-xl bg-gradient-to-br from-[#0B2B5E] to-[#1A4A8B] opacity-90 group-hover:opacity-100 transition-opacity duration-300"
+              ></div>
+              <div
+                class="relative flex items-center justify-center w-full h-full text-white font-bold text-xl tracking-tight"
+              >
+                IV
+              </div>
+            </div>
+            <span
+              class="text-2xl md:text-2.5xl font-extrabold tracking-tight bg-gradient-to-r from-[#0B2B5E] via-[#1A4A8B] to-[#2B6ADD] bg-clip-text text-transparent group-hover:scale-[1.02] transition-transform duration-300"
+            >
+              InkVibe
+            </span>
+          </a>
+
+          <!-- Desktop Navigation -->
+          <div class="hidden md:flex items-center gap-1.5 lg:gap-2">
+            <!-- Main pages -->
+            <nav class="flex items-center gap-1.5 lg:gap-2">
+              <a
+                href="index.html"
+                class="nav-item px-4 py-2.5 rounded-full text-gray-700 hover:text-[#0B2B5E] hover:bg-gray-50/90 font-medium transition-all duration-200"
+                >Home</a
+              >
+              <a
+                href="#about"
+                class="nav-item px-4 py-2.5 rounded-full text-gray-700 hover:text-[#0B2B5E] hover:bg-gray-50/90 font-medium transition-all duration-200"
+                >About</a
+              >
+              <a
+                href="services.html"
+                class="nav-item px-4 py-2.5 rounded-full text-gray-700 hover:text-[#0B2B5E] hover:bg-gray-50/90 font-medium transition-all duration-200"
+                >Services</a
+              >
+              <a
+                href="products.html"
+                class="nav-item px-4 py-2.5 rounded-full text-gray-700 hover:text-[#0B2B5E] hover:bg-gray-50/90 font-medium transition-all duration-200"
+                >Products</a
+              >
+            </nav>
+
+            <!-- Separator -->
+            <div class="hidden lg:block h-5 w-px bg-gray-300 mx-4"></div>
+
+            <!-- Legal links – smaller & lighter -->
+            <nav class="flex items-center gap-1 lg:gap-1.5">
+              <a
+                href="terms.html"
+                class="nav-item px-3 py-2 text-sm text-gray-500 hover:text-[#0B2B5E] transition-colors duration-200"
+                >Terms</a
+              >
+              <a
+                href="refund.html"
+                class="nav-item px-3 py-2 text-sm text-gray-500 hover:text-[#0B2B5E] transition-colors duration-200"
+                >Refund</a
+              >
+              <a
+                href="privacy.html"
+                class="nav-item px-3 py-2 text-sm text-gray-500 hover:text-[#0B2B5E] transition-colors duration-200"
+                >Privacy</a
+              >
+            </nav>
+          </div>
+
+          <!-- Mobile menu button -->
+          <button
+            id="mobileMenuBtn"
+            class="md:hidden p-2.5 -mr-2.5 text-[#0B2B5E] hover:bg-gray-100/70 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-[#1A4A8B]/30"
+            aria-label="Toggle navigation menu"
+          >
+            <i
+              class="fas fa-bars text-2xl transition-transform duration-300"
+              id="menuIcon"
+            ></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile menu -->
+      <div
+        id="mobileNav"
+        class="md:hidden bg-white/98 backdrop-blur-xl border-t border-gray-200/70 shadow-xl max-h-0 overflow-hidden transition-all duration-500 ease-in-out"
+      >
+        <div class="px-5 py-7 space-y-3">
+          <a
+            href="index.html"
+            class="block py-3.5 px-5 rounded-xl text-gray-800 hover:bg-gray-50 active:bg-gray-100 transition-colors font-medium"
+            >Home</a
+          >
+          <a
+            href="#about"
+            class="block py-3.5 px-5 rounded-xl text-gray-800 hover:bg-gray-50 active:bg-gray-100 transition-colors font-medium"
+            >About</a
+          >
+          <a
+            href="services.html"
+            class="block py-3.5 px-5 rounded-xl text-gray-800 hover:bg-gray-50 active:bg-gray-100 transition-colors font-medium"
+            >Services</a
+          >
+          <a
+            href="products.html"
+            class="block py-3.5 px-5 rounded-xl text-gray-800 hover:bg-gray-50 active:bg-gray-100 transition-colors font-medium"
+            >Products</a
+          >
+
+          <div class="h-px bg-gray-200 my-5"></div>
+
+          <a
+            href="terms.html"
+            class="block py-3 px-5 text-gray-600 hover:text-[#0B2B5E] transition-colors"
+            >Terms of Service</a
+          >
+          <a
+            href="refund.html"
+            class="block py-3 px-5 text-gray-600 hover:text-[#0B2B5E] transition-colors"
+            >Refund Policy</a
+          >
+          <a
+            href="privacy.html"
+            class="block py-3 px-5 text-gray-600 hover:text-[#0B2B5E] transition-colors"
+            >Privacy Policy</a
+          >
+        </div>
+      </div>
+    </header>
+
+    <!-- Required dependencies -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <style>
+      .nav-item:hover {
+        transform: translateY(-1px);
+      }
+    </style>
+
+  <!-- ============================================= -->
+  <!--                PAGE HEADER                    -->
+  <!-- ============================================= -->
+  <section class="relative bg-gradient-to-br from-[#0B0F1A] via-[#161B2E] to-[#0B2B5E]  text-white py-24 lg:py-32">
+    <div class="absolute inset-0 opacity-20 pointer-events-none">
+        <div
+          class="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,#F97316,transparent_40%)]"
+        ></div>
+      </div>
+
+    <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 relative z-10 text-center">
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold font-display tracking-tight mb-5">
+        Return & Refund Policy
+      </h1>
+      <p class="text-xl sm:text-2xl text-slate-200 max-w-3xl mx-auto">
+        We stand behind every InkVibe printer we build. This policy is designed to be fair, transparent, and business-friendly.
+      </p>
+      <p class="mt-6 text-slate-300 text-lg">
+        Last updated: March 1, 2026
+      </p>
+    </div>
+  </section>
+
+  <!-- ============================================= -->
+  <!--              MAIN CONTENT                     -->
+  <!-- ============================================= -->
+  <main class="py-16 lg:py-24 ">
+    <div class="max-w-5xl mx-auto px-5 sm:px-6 lg:px-8">
+
+      <div class="prose prose-lg prose-slate max-w-none mb-12">
+        <div class="p-8 bg-white rounded-2xl shadow-sm border border-slate-200 border-l-4 border-l-ink-accent">
+          <p class="text-ink-gray leading-relaxed">
+            InkVibe is committed to your complete satisfaction with every printer, supply, and service we provide. This Return and Refund Policy applies to products purchased directly from inkvibe.com or our authorized U.S. partners. Please read carefully.
+          </p>
+        </div>
+      </div>
+
+      <!-- Accordion Sections -->
+      <div class="space-y-6">
+
+        <!-- 1. Eligibility for Returns -->
+        <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+          <button class="accordion-header w-full px-8 py-6 text-left flex justify-between items-center font-semibold text-xl hover:bg-orange-50/50 transition-colors">
+            <span>1. Eligibility for Returns</span>
+            <i class="fa-solid fa-chevron-down transition-transform"></i>
+          </button>
+          <div class="accordion-content px-8 pb-0 text-ink-gray leading-relaxed">
+            <p>To qualify for a return, your item must satisfy all of these conditions:</p>
+            <ul class="list-disc pl-6 mt-4 space-y-2">
+              <li>Returned within <strong>30 calendar days</strong> from delivery date</li>
+              <li>In original, unopened packaging (unless the product is defective)</li>
+              <li>Unused, undamaged, and in fully resalable condition</li>
+              <li>Accompanied by original proof of purchase (order number or invoice)</li>
+              <li>Includes all accessories, cables, manuals, toner/ink starter kits, and original packaging</li>
+            </ul>
+            <p class="mt-6">Printers that show signs of use beyond basic functionality testing (multiple print jobs, removed protective films, installed third-party supplies, etc.) may incur a restocking fee of up to 15% or be ineligible for return.</p>
+          </div>
+        </div>
+
+        <!-- 2. Non-Returnable Items -->
+        <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+          <button class="accordion-header w-full px-8 py-6 text-left flex justify-between items-center font-semibold text-xl hover:bg-orange-50/50 transition-colors">
+            <span>2. Non-Returnable / Non-Refundable Items</span>
+            <i class="fa-solid fa-chevron-down transition-transform"></i>
+          </button>
+          <div class="accordion-content px-8 pb-0 text-ink-gray leading-relaxed">
+            <p>The following items are generally non-returnable unless received damaged or defective:</p>
+            <ul class="list-disc pl-6 mt-4 space-y-2">
+              <li>Ink cartridges, toner cartridges, maintenance kits and other consumables once opened</li>
+              <li>Custom-configured or special-order printers</li>
+              <li>Opened software licenses, firmware upgrades, or digital downloads</li>
+              <li>Items explicitly marked “Final Sale” or “Clearance”</li>
+              <li>Products damaged due to misuse, improper installation, unauthorized repair, or use of non-InkVibe supplies</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- 3. Return Process -->
+        <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+          <button class="accordion-header w-full px-8 py-6 text-left flex justify-between items-center font-semibold text-xl hover:bg-orange-50/50 transition-colors">
+            <span>3. How to Start a Return</span>
+            <i class="fa-solid fa-chevron-down transition-transform"></i>
+          </button>
+          <div class="accordion-content px-8 pb-0 text-ink-gray leading-relaxed">
+            <ol class="list-decimal pl-6 mt-4 space-y-3">
+              <li>Contact our Returns team within 30 days at <a href="mailto:returns@inkvibe.com" class="text-ink-accent hover:underline">returns@inkvibe.com</a> or 1-888-INK-VIBE. Include your order number and reason for return.</li>
+              <li>We will issue a <strong>Return Merchandise Authorization (RMA)</strong> number and detailed return instructions (usually within 1 business day).</li>
+              <li>Pack the printer securely in its original packaging (or equivalent sturdy box), include all accessories, and clearly write the RMA number on the shipping label.</li>
+              <li>Ship using a trackable carrier (we recommend insured shipping for high-value items).</li>
+              <li>After inspection (usually 3–7 business days), we will process your refund or exchange.</li>
+            </ol>
+          </div>
+        </div>
+
+        <!-- 4. Refund Process -->
+        <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+          <button class="accordion-header w-full px-8 py-6 text-left flex justify-between items-center font-semibold text-xl hover:bg-orange-50/50 transition-colors">
+            <span>4. Refund Timing & Method</span>
+            <i class="fa-solid fa-chevron-down transition-transform"></i>
+          </button>
+          <div class="accordion-content px-8 pb-0 text-ink-gray leading-relaxed">
+            <p>Refunds are issued to the original form of payment:</p>
+            <ul class="list-disc pl-6 mt-4 space-y-2">
+              <li><strong>Credit/Debit Cards:</strong> 5–10 business days after we receive and approve the return</li>
+              <li><strong>PayPal / ACH / Wire:</strong> 3–7 business days</li>
+              <li><strong>Original shipping charges are non-refundable</strong> unless the return is due to our error (wrong item shipped, defective on arrival)</li>
+            </ul>
+            <p class="mt-6">We reserve the right to deny refunds or apply restocking fees if return conditions are not met.</p>
+          </div>
+        </div>
+
+        <!-- 5. Exchanges -->
+        <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+          <button class="accordion-header w-full px-8 py-6 text-left flex justify-between items-center font-semibold text-xl hover:bg-orange-50/50 transition-colors">
+            <span>5. Exchanges</span>
+            <i class="fa-solid fa-chevron-down transition-transform"></i>
+          </button>
+          <div class="accordion-content px-8 pb-0 text-ink-gray leading-relaxed">
+            <p>For defective, damaged, or incorrect items, we will arrange a replacement at no extra charge (including prepaid return shipping).</p>
+            <p class="mt-4">For change-of-mind exchanges (different model/speed/capacity), standard return shipping fees apply and a restocking fee may be charged if the unit was powered on or supplies were installed.</p>
+          </div>
+        </div>
+
+        <!-- 6. Shipping Costs -->
+        <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+          <button class="accordion-header w-full px-8 py-6 text-left flex justify-between items-center font-semibold text-xl hover:bg-orange-50/50 transition-colors">
+            <span>6. Shipping & Return Costs</span>
+            <i class="fa-solid fa-chevron-down transition-transform"></i>
+          </button>
+          <div class="accordion-content px-8 pb-0 text-ink-gray leading-relaxed">
+            <ul class="list-disc pl-6 mt-4 space-y-2">
+              <li><strong>Original shipping fee:</strong> Non-refundable unless we sent the wrong or defective product</li>
+              <li><strong>Customer-paid return shipping:</strong> Required for change-of-mind returns</li>
+              <li><strong>Defective / DOA / wrong item:</strong> We provide a prepaid return label or reimburse reasonable shipping costs</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- 7. Contact -->
+        <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+          <button class="accordion-header w-full px-8 py-6 text-left flex justify-between items-center font-semibold text-xl hover:bg-orange-50/50 transition-colors">
+            <span>7. Contact Us for Returns or Questions</span>
+            <i class="fa-solid fa-chevron-down transition-transform"></i>
+          </button>
+          <div class="accordion-content px-8 pb-0 text-ink-gray leading-relaxed">
+            <p>Our team is ready to assist you:</p>
+            <div class="mt-6 space-y-4">
+              <p><strong>Email:</strong> <a href="mailto:returns@inkvibe.com" class="text-ink-accent hover:underline">returns@inkvibe.com</a></p>
+              <p><strong>Phone:</strong> 1-888-INK-VIBE (Mon–Fri 8 AM – 7 PM PST)</p>
+              <p><strong>Mail:</strong> InkVibe Returns Department<br>456 Tech Park Drive, Fremont, CA 94538</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Final CTA -->
+      <div class="mt-16 p-10 bg-white rounded-2xl shadow-sm border border-slate-200 text-center">
+        <h3 class="text-3xl font-semibold font-display mb-5">Questions about a return or refund?</h3>
+        <p class="text-xl text-ink-gray mb-8 max-w-2xl mx-auto">
+          Our support team is here to help — fast, professional, and U.S.-based.
+        </p>
+        <a href="index.html#contact" class="inline-flex items-center gap-3 px-10 py-5 bg-ink-accent text-white font-bold text-lg rounded-full hover:bg-ink-accent-dark transition-all shadow-lg shadow-orange-200/40">
+          Contact Support <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ============================================= -->
+  <!--                  FOOTER                       -->
+  <!-- ============================================= -->
+  <footer class="bg-jet-navy text-slate-300">
+    <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 py-16">
+      <div class="grid md:grid-cols-12 gap-12">
+        <div class="md:col-span-4">
+          <div class="flex items-center gap-3 mb-6 text-white">
+            <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-jet-accent to-orange-600 flex items-center justify-center">
+              <span class="text-white text-2xl font-black">J</span>
+            </div>
+            <span class="text-2xl font-bold font-display">InkVibe</span>
+          </div>
+          <p class="text-sm leading-relaxed mb-8">
+            Premium printing hardware & services — engineered for American businesses.
+          </p>
+        </div>
+
+        <div class="md:col-span-2">
+          <h4 class="text-white font-semibold mb-6">Company</h4>
+          <ul class="space-y-3 text-sm">
+            <li><a href="/#about" class="hover:text-jet-accent transition-colors">About Us</a></li>
+            <li><a href="/services.html" class="hover:text-jet-accent transition-colors">Services</a></li>
+            <li><a href="#" class="hover:text-jet-accent transition-colors">Careers</a></li>
+          </ul>
+        </div>
+
+        <div class="md:col-span-3">
+          <h4 class="text-white font-semibold mb-6">Legal</h4>
+          <ul class="space-y-3 text-sm">
+            <li><a href="/terms.html" class="hover:text-jet-accent transition-colors">Terms & Conditions</a></li>
+            <li><a href="/refund.html" class="text-jet-accent transition-colors">Return Policy</a></li>
+            <li><a href="/privacy.html" class="hover:text-jet-accent font-medium">Privacy Policy</a></li>
+            <li><a href="#" class="hover:text-jet-accent transition-colors">Cookie Policy</a></li>
+          </ul>
+        </div>
+
+        <div class="md:col-span-3">
+          <h4 class="text-white font-semibold mb-6">Support</h4>
+          <ul class="space-y-3 text-sm">
+            <li><a href="/contact" class="hover:text-jet-accent transition-colors">Contact Us</a></li>
+            <li><a href="#" class="hover:text-jet-accent transition-colors">Support Center</a></li>
+            <li><a href="#" class="hover:text-jet-accent transition-colors">Track Order</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-16 pt-10 border-t border-slate-700 text-center text-sm">
+        © 2026 InkVibe Inc. • All rights reserved • Delaware corporation • United States
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    const mobileBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    mobileBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      const icon = mobileBtn.querySelector('i');
+      icon.classList.toggle('fa-bars');
+      icon.classList.toggle('fa-xmark');
+    });
+
+    // Accordion functionality
+    document.querySelectorAll('.accordion-header').forEach(header => {
+      header.addEventListener('click', () => {
+        const content = header.nextElementSibling;
+        const isOpen = content.classList.contains('open');
+
+        // Close others
+        document.querySelectorAll('.accordion-content').forEach(c => {
+          c.classList.remove('open');
+          c.style.maxHeight = null;
+          c.previousElementSibling.classList.remove('active');
+        });
+
+        // Toggle this one
+        if (!isOpen) {
+          content.classList.add('open');
+          content.style.maxHeight = content.scrollHeight + 'px';
+          header.classList.add('active');
+        }
+      });
+    });
+
+    // Open first accordion item by default (optional)
+    document.querySelector('.accordion-header')?.click();
+  </script>
+</body>
+</html>
